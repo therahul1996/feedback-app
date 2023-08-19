@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from './components/Sidebar';
+import GridContent from './components/GridContent';
+import ListContent from './components/ListContent';
+import AddContent from './components/AddContent'
+import feedbackData from './data/feedback.json'
+import { useState } from 'react';
 function App() {
+  const [feedbacks, setFeedbacks] = useState(feedbackData)
+  const addFeedback = newFeedback => {
+    setFeedbacks([...feedbacks, {...newFeedback, id: feedbacks.length + 1}]);
+  }
+  const deleteFeedback = feedbackID => {
+    const updateFeedback = feedbacks.filter(feedback => feedback.id !== feedbackID);
+    setFeedbacks(updateFeedback);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Sidebar />
+      <Routes>
+        <Route path="/" element={<GridContent feedbacks={feedbacks} deleteFeedback={deleteFeedback} />} />
+        <Route path="/add-content" element={<AddContent newData={addFeedback} />} />
+        <Route path="/list-content" element={<ListContent feedbacks={feedbacks} deleteFeedback={deleteFeedback} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
