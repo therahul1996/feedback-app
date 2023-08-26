@@ -57,6 +57,9 @@ Default css
 .ml-15 {
   margin-left: 15px;
 }
+.mb-10 {
+  margin-bottom: 10px;
+}
 .mb-15 {
   margin-bottom: 15px;
 }
@@ -93,8 +96,8 @@ Default css
 .position-relative {
   position: relative;
 }
-@media(max-width: 991px) {
-  .md-w-100{
+@media (max-width: 991px) {
+  .md-w-100 {
     width: 100% !important;
   }
 }
@@ -243,16 +246,16 @@ Sidebar
     transition: 0.3s all ease-in;
   }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .sideNav {
     width: 260px;
-}
-.sideNav {
-  left: -260px;
-}
+  }
+  .sideNav {
+    left: -260px;
+  }
   .sideContent {
     padding: 15px;
-}
+  }
 }
 /* ******************************
 Main Content
@@ -271,13 +274,13 @@ Main Content
     margin-left: 0;
   }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .mainContent {
     padding: 15px;
     margin: 15px;
     background-color: #fff;
     border-radius: 4px;
-}
+  }
 }
 /* ******************************
 List Design
@@ -316,7 +319,18 @@ List Design
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  margin-bottom: 10px;
+  margin-bottom: 0;
+}
+.list-card h2 {
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-family: fantasy;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .list-card p {
   margin: 0;
@@ -329,6 +343,23 @@ List Design
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+}
+@media (max-width: 767px) {
+  .list-card {
+    margin-right: 0;
+  }
+  .list-card .d-flex {
+    flex-direction: column;
+    align-items: self-start;
+  }
+  .list-card .ml-15 {
+    margin-left: 0;
+  }
+  .close-icon {
+    right: 0;
+    width: 50px;
+    top: 0;
+  }
 }
 /* ******************************
 List Design
@@ -369,12 +400,28 @@ List Design
   margin-bottom: 10px;
   height: 35px;
 }
-.grid-card p {
+.grid-card .img-box {
+  width: 70px;
+}
+.grid-card .name-box {
+  width: calc(100% - 70px);
+}
+.grid-card .name-box h2 {
+  margin: 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-family: fantasy;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.grid-card .name-box p {
   margin: 0;
   color: #b9b9b9;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 .grid-card .user-image {
   width: 60px;
@@ -385,9 +432,13 @@ List Design
 .grid-close-icon {
   position: absolute;
   right: 15px;
-  width: 20px;
-  top: 15px;
+  width: 12px;
+  top: 13px;
   cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 @media (max-width: 1024px) {
   .grid-group {
@@ -524,29 +575,36 @@ select.country {
   margin-top: 15px;
   cursor: pointer;
 }
+.success-message {
+  background-color: #d1ffd1;
+  padding: 9px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
 @media (max-width: 991px) {
   .pl-box {
     width: 100%;
     border-radius: 0;
   }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .pl-box {
     overflow: auto;
-}
+  }
   .modal-sideNav {
     position: unset;
     width: 100%;
   }
   .pl-box-right {
     margin-left: 0;
-}
-.pl-box-right-content {
-  padding: 15px;
-}
-.submit-feedback-btn {
-  width: 100%;
-}
+  }
+  .pl-box-right-content {
+    padding: 15px;
+  }
+  .submit-feedback-btn {
+    width: 100%;
+  }
 }
 /* ******************************
 No data
@@ -565,8 +623,8 @@ No data
   font-size: 30px;
   font-family: monospace;
 }
-@media(max-width: 767px) {
-  .no-data-sec img{
+@media (max-width: 767px) {
+  .no-data-sec img {
     width: 100%;
   }
   .no-data-sec h3 {
