@@ -66,6 +66,9 @@ Default css
 .mt-25px {
   margin-top: 25px;
 }
+.my-20px{
+  margin: 20px 0;
+}
 .text-center {
   text-align: center !important;
 }
@@ -629,5 +632,22 @@ No data
   }
   .no-data-sec h3 {
     margin: 0;
+  }
+}
+/* ******************************
+Search Sec
+****************************** */
+.search-sec .form-control{
+  margin: 0px 0px 0px auto;
+}
+.data-avail{
+  border: 1px solid #a3ffd3;
+}
+.data-noavail{
+  border: 1px solid #913831;
+}
+@media(max-width: 767px) {
+  .search-sec .form-control{
+    width: 100%;
   }
 }

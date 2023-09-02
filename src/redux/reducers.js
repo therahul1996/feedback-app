@@ -1,7 +1,8 @@
 import { ADD_FEEDBACK, DELETE_FEEDBACK } from './actions';
 import feedbackData from '../data/feedback.json'
 const initialState = {
-  feedbacks: feedbackData,
+  feedbacks: feedbackData.slice().sort((a, b) => b.id - a.id),
+  searchQuery: '',
 };
 
 const feedbackReducer = (state = initialState, action) => {
@@ -17,7 +18,7 @@ const feedbackReducer = (state = initialState, action) => {
       };
       return {
         ...state,
-        feedbacks: [...state.feedbacks, newFeedback],
+        feedbacks: [newFeedback, ...state.feedbacks],
       };
       case DELETE_FEEDBACK:
       const updatedFeedbacks = state.feedbacks.filter(feedback => feedback.id !== action.payload);
@@ -25,7 +26,6 @@ const feedbackReducer = (state = initialState, action) => {
         ...state,
         feedbacks: updatedFeedbacks,
       };
-      
     default:
       return state;
   }
