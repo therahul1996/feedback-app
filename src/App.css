@@ -138,7 +138,6 @@ Sidebar
 }
 .btn-one {
   background-color: #ebf2f7;
-  border-radius: 8px 0 0 8px;
   box-shadow: 0px 18px 88px -4px #18274b24 inset;
   box-shadow: 0px 8px 28px -6px #18274b1f inset;
   width: 70px;
@@ -151,7 +150,6 @@ Sidebar
 .btn-two {
   border: 0;
   background-color: #ebf2f7;
-  border-radius: 0 8px 8px 0;
   box-shadow: 0px 18px 88px -4px #18274b24 inset;
   box-shadow: 0px 8px 28px -6px #18274b1f inset;
   width: 70px;
@@ -160,6 +158,24 @@ Sidebar
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.btn-three {
+  border: 0;
+  background-color: #ebf2f7;
+  box-shadow: 0px 18px 88px -4px #18274b24 inset;
+  box-shadow: 0px 8px 28px -6px #18274b1f inset;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-droup .btn-one{
+  border-radius: 8px 0 0 8px;
+}
+.btn-droup .btn-three{
+  border-radius: 0 8px 8px 0;
 }
 .active {
   background: #a3ffd3;

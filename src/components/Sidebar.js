@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import user from '../img/user.png'
 import grid from '../img/grid.png'
 import list from '../img/list.png'
+import chart from '../img/chart.png'
 import { NavLink, Link } from 'react-router-dom'
 const Sidebar = () => {
     const [isOpen, setOpen] = useState("false");
@@ -36,6 +37,9 @@ const Sidebar = () => {
                             </NavLink>
                             <NavLink className={(navData) => (navData.isActive ? "active btn-two" : 'none btn-two')} to='/list-content' onClick={ToggleClass}>
                                 <img src={list} alt='list' className='w-30px' />
+                            </NavLink>
+                            <NavLink className={(navData) => (navData.isActive ? "active btn-three" : 'none btn-three')} to='/chart' onClick={ToggleClass}>
+                                <img src={chart} alt='chart' className='w-30px' />
                             </NavLink>
                         </div>
                     </div>
